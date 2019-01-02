@@ -1,0 +1,16 @@
+<nav class="site-nav">
+  <ul>
+    {% assign url = page.url | remove: 'index.html' %}
+    {% for page in site.pages %}
+      {% if page.title and page.top-level %}
+      <li>
+        {% if url == page.url %}
+          <strong>{{ page.title }}</strong>
+        {% else %}
+          <a href="{{ page.url }}">{{ page.title }}</a>
+        {% endif %}
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
