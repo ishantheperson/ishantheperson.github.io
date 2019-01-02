@@ -41,12 +41,14 @@ figure.highlight {
   font-family: $monospace-font-family;
   font-size: 90%;
   line-height: 1.8;
-  overflow-x: auto;
 
   > pre,
   pre.highlight {
     margin: 0;
     padding: 1em;
+
+    word-wrap: normal;
+    overflow-x: auto;
   }
 }
 

@@ -15,14 +15,15 @@ figure.highlight {
   color: #586e75;
   font-family: Consolas, monospace;
   font-size: 90%;
-  line-height: 1.8;
-  overflow-x: auto; }
+  line-height: 1.8; }
   div.highlighter-rouge > pre,
   div.highlighter-rouge pre.highlight,
   figure.highlight > pre,
   figure.highlight pre.highlight {
     margin: 0;
-    padding: 1em; }
+    padding: 1em;
+    word-wrap: normal;
+    overflow-x: auto; }
 
 .highlight table {
   margin-bottom: 0;
