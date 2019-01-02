@@ -27,6 +27,8 @@ body {
 .site-nav ul {
   list-style: none;
   text-transform: lowercase;
+
+  padding: 0;
 }
 
 .site-nav li {
