@@ -1,0 +1,71 @@
+html {
+  height: 100%;
+  width: 100%;
+  
+  border-top: 0.2rem solid black;
+  
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+}
+
+body {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 2em 2em 2em;
+}
+
+.site-header {
+  text-align: center;
+
+  margin: 2em 0;
+}
+
+.site-nav a:visited {
+  color: blue; 
+}
+
+.site-nav ul {
+  list-style: none;
+  text-transform: lowercase;
+}
+
+.site-nav li {
+  display: inline;
+}
+
+.site-nav li:after {
+  content: '| ';
+}
+
+.site-nav li:last-child:after {
+  content: '';
+}
+
+.profile {
+  display: block;
+
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+
+  border-radius: 50%;
+}
+
+.post img {
+  max-width: 100%;
+}
+
+.post-nav {
+  display: table;
+  width: 100%;
+}
+
+.post-nav-previous {
+  display: table-cell;
+  text-align: left;
+}
+
+.post-nav-next {
+  display: table-cell;
+  text-align: right;
+}

@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<main class="post">
+  <header>
+    <h1>{{ page.title }}</h1>
+    <p style="font-style: italic">
+      {{ page.date | date: "%B %-d, %Y" }}
+    </p>
+
+    {% include post-nav.html %}
+  </header>
+
+  {{ content }}
+
+  <footer>
+    {% include post-nav.html %}
+  </footer>
+</main>
