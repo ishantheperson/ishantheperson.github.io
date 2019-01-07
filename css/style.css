@@ -9,9 +9,13 @@ html {
 }
 
 body {
-  max-width: 768px;
   margin: 0 auto;
   padding: 0 1em 1em 1em;
+}
+
+h4 {
+  font-weight: normal;
+  font-style: italic;
 }
 
 .site-header {
@@ -68,4 +72,11 @@ body {
 .post-nav-next {
   display: table-cell;
   text-align: right;
+}
+
+.site-footer {
+  text-align: center;
+  font-size: 0.8rem;
+
+  margin: 1rem 0;
 }

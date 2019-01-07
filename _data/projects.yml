@@ -1,0 +1,56 @@
+-
+  name: Spectral Clustering
+  tech: Python, C
+  img: spectral-cluster.png
+  desc: >
+    Calculates appropriate clusters for data points
+    of arbitrary dimension using the spectral clustering
+    algorithm, and then displays the results
+    graphically, along with a visual representation
+    of the constructed similarity graph.
+
+
+    The Spectral Clustering algorithm makes use of 
+    the k-means algorithm, which is implemented in C
+    for speed. The Spectral Clustering component is 
+    written in Python because it uses `numpy` to 
+    find eigenvalues.
+
+
+    I've written about `matplotlib` integration as well
+    as C extensions on this site. I'm not allowed to release
+    the full source at this time.
+
+-
+  name: Pixel Game
+  tech: TypeScript
+  img: pixel-game.png
+  desc: >
+    This is a particle physics simulator. There are several
+    different pixel types, each with different properties. 
+
+
+    The game world features forces, explosions, gravity, as well
+    as mechanisms to override these for each individual particle type.
+
+
+    The source is available on [GitHub](https://github.com/ishantheperson/pixel-game)
+
+-
+  name: Carnegie Cupid
+  tech: Node.js, JavaScript
+  img: carnegie-cupid.png
+  desc: >
+    1st place - GSK @ HackCMU 2018
+
+    
+    Modern SPA which used a real-time video feed of the user
+    in conjunction with Microsoft Azure machine learning 
+    services to identify facial expressions as part of 
+    calculating "interest".
+
+
+    More details available on [DevPost](https://devpost.com/software/carnegie-cupid).
+
+
+    Source available on [GitHub](https://github.com/lydiaxing/date-app)

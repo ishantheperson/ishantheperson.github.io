@@ -1,0 +1,42 @@
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.project:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+
+.project-img {
+  flex-basis: 60%;
+  
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+.project:nth-child(2n) .project-img {
+  padding-left: 1rem;
+}
+
+.project-text {
+  flex-basis: 40%;
+}
+
+@media all and (max-width: 800px) {
+  .project, .project:nth-child(2n) {
+    flex-direction: column;
+  }
+
+  .project-text {
+    width: 100%;
+  }
+
+  .project-img {
+    padding: 0;
+  }
+}
+
+.projects img {
+  max-width: 100%;
+}
