@@ -1,7 +1,9 @@
 .project {
   display: flex;
+
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 
 .project:nth-child(2n) {
