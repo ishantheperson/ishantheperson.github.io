@@ -41,6 +41,11 @@ figure.highlight {
   font-family: $monospace-font-family;
   font-size: 90%;
   line-height: 1.8;
+  box-sizing: border-box;
+
+  > div {
+    overflow: auto;
+  }
 
   > pre,
   pre.highlight {
@@ -48,7 +53,6 @@ figure.highlight {
     padding: 1em;
 
     word-wrap: normal;
-    overflow-x: auto;
   }
 }
 
@@ -80,10 +84,6 @@ figure.highlight {
   pre {
     margin: 0;
   }
-}
-
-.highlight pre {
-  width: 100%;
 }
 
 .highlight .hll {

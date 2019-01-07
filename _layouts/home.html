@@ -2,7 +2,7 @@
 layout: default
 ---
 <main>
-  Welcome to Ishan's blog.
+  <!-- Welcome to Ishan's blog. -->
 
   <h2>Recent Articles</h2>
 
@@ -12,8 +12,10 @@ layout: default
       <h3>{{ post.title }}</h3>
     </header>
 
-    <p>{{ post.excerpt }}</p>
-    <a href="{{ post.url }}">Read more</a>
+    <p>
+      {{ post.excerpt | remove: '<p>' | remove: '</p>' }}    
+      &mdash; <a href="{{ post.url }}">Read more</a>
+  </p>
   </article>
   {% endfor %}
 </main>

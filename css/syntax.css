@@ -15,15 +15,18 @@ figure.highlight {
   color: #586e75;
   font-family: Consolas, monospace;
   font-size: 90%;
-  line-height: 1.8; }
+  line-height: 1.8;
+  box-sizing: border-box; }
+  div.highlighter-rouge > div,
+  figure.highlight > div {
+    overflow: auto; }
   div.highlighter-rouge > pre,
   div.highlighter-rouge pre.highlight,
   figure.highlight > pre,
   figure.highlight pre.highlight {
     margin: 0;
     padding: 1em;
-    word-wrap: normal;
-    overflow-x: auto; }
+    word-wrap: normal; }
 
 .highlight table {
   margin-bottom: 0;
@@ -45,9 +48,6 @@ figure.highlight {
       padding-left: 1em; }
   .highlight table pre {
     margin: 0; }
-
-.highlight pre {
-  width: 100%; }
 
 .highlight .hll {
   background-color: #eee8d5; }
