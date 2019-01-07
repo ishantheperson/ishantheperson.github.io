@@ -89,7 +89,8 @@ static PyMethodDef methods[] = {
 ```
 
 In order, we provide a name we export, a function pointer to the function, the calling convention
-(we use `METH_VARARGS` because we will need to in the next blog post, although there are many useful other [calling conventions](https://docs.python.org/3/c-api/structures.html#c.PyMethodDef)), and a function description.
+(we use `METH_VARARGS` because we will need to in the next blog post, although there are many useful other [calling conventions](https://docs.python.org/3/c-api/structures.html#c.PyMethodDef)), and a function description. We add an entry for each
+method we wish to export, followed by a `NULL`-terminator
 
 Finally, we need to add a module definition and a module initialization function.
 
@@ -141,6 +142,44 @@ Hello world
 ```
 
 The descriptions we added earlier can be viewed with `help(test_module)` or `help(test_module.hello)`.
+
+Here is the complete code for the extension:
+
+```c
+#include <Python.h>
+
+#if PY_MAJOR_VERSION < 3
+#error "Requires Python 3"
+#include "stopcompilation"
+#endif
+
+static PyObject* hello(PyObject* self, PyObject* args) {
+  (void)self;
+  (void)args;
+
+  printf("Hello world\n");
+
+  Py_RETURN_NONE;
+}
+
+static PyMethodDef methods[] = {
+  { "hello", &hello, METH_VARARGS, "Hello world function" },
+  { NULL, NULL, 0, NULL }
+};
+
+static struct PyModuleDef module_def = {
+  PyModuleDef_HEAD_INIT, // always required
+  "test_module",         // module name
+  "Testing module",      // description
+  -1,                    // module size (-1 indicates we don't use this feature)
+  methods,               // method table
+};
+
+PyMODINIT_FUNC PyInit_test_module() {
+  printf("Initialization\n");
+  return PyModule_Create(&module_def);
+}
+```
 
 That completes the boilerplate we need to create a Python extension. In the next post we will cover
 Python values and unpacking arguments.
