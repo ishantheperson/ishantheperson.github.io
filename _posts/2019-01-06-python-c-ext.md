@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Short Guide to Writing C Extensions for Python"
-date:   2019-01-06 18:06:00 -0800
+date:   2019-01-06 18:06:00
 categories: python c
 ---
 
