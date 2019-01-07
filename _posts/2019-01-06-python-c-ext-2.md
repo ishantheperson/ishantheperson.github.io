@@ -120,7 +120,9 @@ After adding these functions to the method table, let's try them out. If we pass
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: an integer is required (got type str)
-
+```
+And then with valid arguments:
+```python
 >>> x = test_module.my_function("hello", 2, 3.1415)
 3.141500 hello
 3.141500 hello
@@ -128,6 +130,7 @@ TypeError: an integer is required (got type str)
 >>> x
 6.283
 ```
+
 Here are some errors from type-checking with `process_list`
 ```python
 >>> test_module.process_list("not a list")

@@ -125,6 +125,7 @@ In order to use our module, we have some options:
   This is the best option if you are distributing the module to others
   - We can navigate to the directory containing the `.so` library before running the interpreter
   - We can copy the `.so` library to a directory listed in the environment variable `$PYTHONPATH`
+  - We could [recompile the Python interpreter](https://docs.python.org/3/extending/extending.html#compilation-and-linkage) with our module 
 
 For more information, I recommend [this page](https://leemendelowitz.github.io/blog/how-does-python-find-packages.html)
 
