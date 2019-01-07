@@ -1,0 +1,11 @@
+html {
+  border-top: 0.2rem solid black;
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+}
+
+h4 {
+  font-weight: normal;
+  font-style: italic;
+}

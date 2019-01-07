@@ -13,7 +13,10 @@
 			"**/.DS_Store": true,
 			"_site/": true,
 			"Gemfile*": true,
-			".gitignore": true
+			".gitignore": true,
+			"**/.sass-cache/": true,
+			"**/*.scss": true,
+			"**/*.map": true
 		}
 	}
 }
