@@ -55,3 +55,14 @@
 
 
     Source available on [GitHub](https://github.com/lydiaxing/date-app)
+
+-
+  name: Cellular Automata
+  tech: TypeScript
+  img: cellular.png
+  desc: >
+    Configurable cellular automata simulator.
+
+
+    Source available on [GitHub](https://github.com/ishantheperson/CellularAutomata)
+    and live demo available [here](http://www.andrew.cmu.edu/user/ibhargav/cellular/)
