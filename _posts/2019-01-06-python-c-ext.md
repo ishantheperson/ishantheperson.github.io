@@ -110,6 +110,8 @@ PyMODINIT_FUNC PyInit_test_module() {
 }
 ```
 
+Our initialization function must be named `PyInit_<module name>`, but
+there are no requirements for the module definition struct.
 That is enough code to compile and use our module.
 Using the setup script:
 
