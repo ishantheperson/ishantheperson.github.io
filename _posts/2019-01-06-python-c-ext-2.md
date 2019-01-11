@@ -2,7 +2,7 @@
 layout: post
 title:  "Dealing with Python values in C"
 date:   2019-01-06 20:00:00 -0800
-categories: python c
+tags: python c
 ---
 
 In the previous post we saw how to set up the boilerplate code necessary for a C
@@ -71,7 +71,8 @@ static PyObject* process_list(PyObject* self, PyObject* args) {
     return NULL;
 ```
 Here we use the format `"O!"`. The `O` indicates we are need an object,
-and the `!` indicates we will specify a type the object must have.
+and the `!` indicates we will specify a type the object must have. We need
+to do this because Python lists don't have a corresponding C primitive.
 Then we pass in the address of the type object first. Now, Python will
 also throw an error if the user provides an invalid object type.
 
@@ -87,7 +88,7 @@ We can do this with `PyList_Check`:
 ```c
   double sum = 0;
 
-  for (unsigned i = 0; i < list_size; i++) {
+  for (Py_ssize_t i = 0; i < list_size; i++) {
     PyObject* sublist = PyList_GetItem(list, i);
 
     if (!PyList_Check(sublist)) {
@@ -99,7 +100,7 @@ Now we can iterate over each sublist and add them up
 ```c
     Py_ssize_t sublist_size = PyList_Size(sublist);
 
-    for (unsigned j = 0; j < sublist_size; j++) {
+    for (Py_ssize_t j = 0; j < sublist_size; j++) {
       sum += PyFloat_AsDouble(PyList_GetItem(sublist, j));
 
       if (PyErr_Occurred()) return NULL;
@@ -111,7 +112,8 @@ Now we can iterate over each sublist and add them up
 ```
 
 We convert `PyObject*`s to `double`s here with `PyFloat_AsDouble`. But this function has no way
-to signal errors (for example, if the list item isn't the right type). 
+to signal errors (for example, if the list item isn't the right type) because it returns the
+primitive `double`.
 So instead we call `PyErr_Occurred` to see if the conversion was successfull, and if not, we return `NULL`.
 
 After adding these functions to the method table, let's try them out. If we pass in invalid arguments:
@@ -206,7 +208,7 @@ static PyObject* process_list(PyObject* self, PyObject* args) {
 
   double sum = 0;
 
-  for (unsigned i = 0; i < list_size; i++) {
+  for (Py_ssize_t i = 0; i < list_size; i++) {
     PyObject* sublist = PyList_GetItem(list, i);
 
     if (!PyList_Check(sublist)) {
@@ -216,7 +218,7 @@ static PyObject* process_list(PyObject* self, PyObject* args) {
 
     Py_ssize_t sublist_size = PyList_Size(sublist);
 
-    for (unsigned j = 0; j < sublist_size; j++) {
+    for (Py_ssize_t j = 0; j < sublist_size; j++) {
       sum += PyFloat_AsDouble(PyList_GetItem(sublist, j));
 
       if (PyErr_Occurred()) return NULL;

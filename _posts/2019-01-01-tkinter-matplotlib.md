@@ -2,7 +2,7 @@
 layout: post
 title:  "Using Tkinter and Matplotlib"
 date:   2019-01-01 16:30:05 -0800
-categories: python data
+tags: python data
 ---
 
 Recently I was working on a project in which I needed to quickly visualize groups of 2D data points.
