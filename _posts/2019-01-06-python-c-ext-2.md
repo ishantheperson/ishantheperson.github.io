@@ -237,3 +237,13 @@ PyMODINIT_FUNC PyInit_test_module() {
   return PyModule_Create(&module_def);
 }
 ```
+
+```typescript
+function getText(x: string, y: number): string {
+  const result = "";
+  for (let i = 0; i < y; i++) 
+    result += x;
+
+  return result;
+}
+```

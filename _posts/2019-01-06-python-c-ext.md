@@ -109,6 +109,15 @@ PyMODINIT_FUNC PyInit_test_module() {
 
 Our initialization function must be named `PyInit_<module name>`, but
 there are no requirements for the module definition struct.
+If the initialization function isn't correctly named, we would
+receive an error when we import our module such as the following:
+```python
+>>> import test_module
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: dynamic module does not define module export function (PyInit_test_module)
+```
+
 That is enough code to compile and use our module.
 Using the setup script:
 
