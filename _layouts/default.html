@@ -10,8 +10,28 @@ width: "800px"
 
     <title>{{ page.title }} &mdash; {{ site.title }} </title>
 
+    <meta name="og:title" content="{{ page.title }}">
+    <meta name="og:image" content="/assets/profile.png">
+    <meta name="og:url" content="{{ site.url }}{{ page.url }}">
+    {% if page.date %}
+    <meta name="og:type" content="article">
+    <meta name="og:type:published_time" content="{{ page.date }}">
+    <meta name="og:type:author">
+    <meta name="og:type:author:first_name" content="Ishan">
+    <meta name="og:type:author:last_name" content="Bhargava">
+    {% for tag in page.tags %}
+    <meta name="og:type:tag" content="{{ tag }}">
+    {% endfor %}
+
+    {% else %}
+    <meta name="og:type" content="profile">
+    <meta name="og:type:first_name" content="Ishan">
+    <meta name="og:type:last_name" content="Bhargava">
+    {% endif %}
+
     <link rel="icon" type="image/png" href="/assets/profile.png">
-    
+    <link rel="canonical" href="{{ site.url }}{{ page.url}}">
+
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/theme.css">
 
