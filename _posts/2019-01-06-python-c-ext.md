@@ -59,10 +59,7 @@ Including a nonexistant file is a guaranteed way to stop compilation.
 
 We are now ready to write our first function. 
 ```c
-static PyObject* hello(PyObject* self, PyObject* args) {
-  (void)self;
-  (void)args;
-
+static PyObject* hello(PyObject* Py_UNUSED(self), PyObject* Py_UNUSED(args)) {
   printf("Hello world\n");
 
   Py_RETURN_NONE;
@@ -156,10 +153,7 @@ Here is the complete code for the extension:
 #include "stopcompilation"
 #endif
 
-static PyObject* hello(PyObject* self, PyObject* args) {
-  (void)self;
-  (void)args;
-
+static PyObject* hello(PyObject* Py_UNUSED(self), PyObject* Py_UNUSED(args)) {
   printf("Hello world\n");
 
   Py_RETURN_NONE;

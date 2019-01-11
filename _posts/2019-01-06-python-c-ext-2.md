@@ -14,9 +14,7 @@ a string, an integer, and a floating-point number. First
 we will look at how to extract these arguments from the `args` object.
 
 ```c
-static PyObject* my_function(PyObject* self, PyObject* args) {
-  (void)self;
-
+static PyObject* my_function(PyObject* Py_UNUSED(self), PyObject* args) {
   const char* a;
   int b;
   double c;
@@ -62,9 +60,7 @@ For the next function we implement, it will take in a list of list of doubles,
 and then add up all the doubles.
 
 ```c
-static PyObject* process_list(PyObject* self, PyObject* args) {
-  (void)self;
-
+static PyObject* process_list(PyObject* Py_UNUSED(self), PyObject* args) {
   PyObject* list;
 
   if (!PyArg_ParseTuple(args, "O!", &PyList_Type, &list)) 
@@ -166,18 +162,13 @@ Here is the complete code:
 #include "stopcompilation"
 #endif
 
-static PyObject* hello(PyObject* self, PyObject* args) {
-  (void)self;
-  (void)args;
-
+static PyObject* hello(PyObject* Py_UNUSED(self), PyObject* Py_UNUSED(args)) {
   printf("Hello world\n");
 
   Py_RETURN_NONE;
 }
 
-static PyObject* my_function(PyObject* self, PyObject* args) {
-  (void)self;
-
+static PyObject* my_function(PyObject* Py_UNUSED(self), PyObject* args) {
   const char* a;
   int b;
   double c;
@@ -196,9 +187,7 @@ static PyObject* my_function(PyObject* self, PyObject* args) {
   return PyFloat_FromDouble((double)b * c);
 }
 
-static PyObject* process_list(PyObject* self, PyObject* args) {
-  (void)self;
-
+static PyObject* process_list(PyObject* Py_UNUSED(self), PyObject* args) {
   PyObject* list;
 
   if (!PyArg_ParseTuple(args, "O!", &PyList_Type, &list))
