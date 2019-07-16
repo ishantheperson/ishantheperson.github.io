@@ -5,6 +5,14 @@ html {
   font-size: 18px;
 }
 
+main.post {
+  line-height: 1.3;
+}
+
+code {
+  font-family: Consolas, monospace;
+}
+
 h4 {
   font-weight: normal;
   font-style: italic;
