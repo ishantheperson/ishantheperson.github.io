@@ -16,7 +16,7 @@
     Hopefully this will be released soon
 
 -
-  name: F0 Language Interpreter 
+  name: F0 Language Compiler 
   tech: Haskell
   img: f0.png
   desc: >
