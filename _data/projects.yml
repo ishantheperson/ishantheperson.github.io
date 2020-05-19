@@ -1,4 +1,61 @@
 -
+  name: CC0 Compiler Enhancements
+  tech: C, SML
+  img: cc0.png
+  desc: >
+    Over the past two semesters I have made several enhancements
+    to the C0 compiler CC0. Some of the notable changes are:
+      - Implementing backtraces in the C0 runtime
+      - Implementing bytecode generation for generic (`void*`) pointers
+        and function pointers 
+      - Implementing compiler warnings for common mistakes (unused variable,
+        dead code, statements with no effect etc.)
+      - Implemented `printf` and `format` (i.e. `asprintf`) into the language with full consideration for 
+        bytecode generation, type safety, etc.
+
+    Hopefully this will be released soon
+
+-
+  name: F0 Language Interpreter 
+  tech: Haskell
+  img: f0.png
+  desc: >
+    This compiles a subset of ML (including sum/product types, 
+    polymorphism, first-class functions, closures, etc.) into C1.
+
+    Source on [GitHub](https://github.com/ishantheperson/F0).
+    It is also accessible on Andrew via `~ibhargav/public/f0`
+    
+- 
+  name: C0 IDE Integration
+  tech: TypeScript
+  img: c0-vscode.png
+  desc: >
+    This implements Microsoft's Language Server Protocol
+    for the programming language C0, which is used as part
+    of the introductory CS course at CMU. It has many of the features
+    you would expect such as semantic code completion, error squiggles,
+    go-to-definition, etc. 
+
+    Download/get more information on the [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=15122staff.c0-lsp)
+
+-
+  name: Model Checking
+  tech: Haskell
+  img: model-checking.png
+  desc: >
+    This program is able to decide the validity (truth value)
+    of first-order logic statements over a synchronous model. 
+    It can also provide examples which satisfy a given statement.
+
+    It was developed as part of the final project for 15-354
+    Computational Discrete Math at CMU and was an exercise for
+    using some higher-level constructs of Haskell's type systems
+    to implement dependant typing. 
+
+    Source code on [GitHub](https://github.com/ishantheperson/ModelChecking)
+
+-
   name: Spectral Clustering
   tech: Python, C
   img: spectral-cluster.png
@@ -18,8 +75,7 @@
 
 
     I've written about `matplotlib` integration as well
-    as C extensions on this site. I'm not allowed to release
-    the full source at this time.
+    as C extensions on this site. 
 
 -
   name: Pixel Game

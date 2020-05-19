@@ -17,6 +17,10 @@
 			"**/.sass-cache/": true,
 			"**/*.scss": true,
 			"**/*.map": true
+		},
+		"files.associations": {
+			"*.c1": "c",
+			"memory": "cpp"
 		}
 	}
 }
