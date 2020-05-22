@@ -74,10 +74,13 @@ freeVariables = \case
   F0TagValue _ _ e -> freeVariables e
   F0Case obj arms -> freeVariables obj `Set.union` Set.unions (map (\(_, (x, e)) -> x `Set.delete` freeVariables e) arms)
   F0TypeAssertion e _ -> freeVariables e
-  F0Let d e -> freeVariablesDecl d `Set.union` freeVariables e 
+  F0Let d e -> 
+    case declName d of
+      Nothing -> freeVariables e 
+      Just x -> Set.delete x (freeVariables e) `Set.union` freeVariablesDecl d 
   where freeVariablesDecl = \case 
           F0Value _ _ e -> freeVariables e 
-          F0Fun _ _ _ e -> freeVariables e 
+          F0Fun x _ _ e -> Set.delete x (freeVariables e)
           F0Data {} -> Set.empty
 ```
 This function has many undesirable features:
