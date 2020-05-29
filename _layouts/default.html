@@ -42,6 +42,7 @@ width: "800px"
       <link rel="stylesheet" type="text/css" href="/css/{{ style }}">
     {% endfor %}
 
+    <!-- Pages can have different widths, so this must live in the HTML -->
     <style type="text/css">
     body {
       max-width: {{ page.width | default: "800px" }};
