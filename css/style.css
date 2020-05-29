@@ -1,3 +1,21 @@
+/* Load dark mode colors by default */
+:root {
+  --background-color: black;
+  --text-color: white;
+  --link-color: cornflowerblue;
+  --visited-link-color: plum;
+}
+
+/* Swap to light mode if preffered */
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: white;
+    --text-color: black;
+    --link-color: blue;
+    --visited-link-color: #551A8B;
+  }
+}
+
 html {
   height: 100%;
   width: 100%;
@@ -6,16 +24,29 @@ html {
 body {
   margin: 0 auto;
   padding: 0 1em 1em 1em;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .site-header {
   text-align: center;
-
   margin: 2em 0;
 }
 
+a {
+  color: var(--link-color);
+}
+
+a:visited {
+  color: var(--visited-link-color);
+}
+
+a:active {
+  color: red;
+}
+
 .site-nav a:visited {
-  color: blue; 
+  color: var(--link-color); 
 }
 
 .site-nav ul {

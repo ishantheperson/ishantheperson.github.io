@@ -3,6 +3,8 @@
   tech: C, SML
   img: cc0.png
   desc: >
+    Read the [release notes here](/posts/c0-2)
+
     Over the past two semesters I have made several enhancements
     to the C0 compiler CC0. Some of the notable changes are:
       - Implementing backtraces in the C0 runtime
