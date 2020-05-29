@@ -26,7 +26,7 @@ This article describes the specific implementation of these abstractions in Hask
  - [Recursion Schemes - Part 4.5](https://blog.sumtypeofway.com/posts/recursion-schemes-part-4-point-5.html)
 
 In this post I will show how I refactored some code in a recent project I was working on. This project was a compiler
-for a functional language, and so I had defined a syntax tree data type like this:
+for a functional language, and so I had defined a syntax tree data type like this: 
 
 ```hs
 data F0Expression symbol typeInfo = 
