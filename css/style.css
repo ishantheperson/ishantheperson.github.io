@@ -4,15 +4,21 @@
   --text-color: white;
   --link-color: cornflowerblue;
   --visited-link-color: plum;
+  
+  --table-border-color: #343d44;
+  --table-stripe-color: #1c2125;
 }
 
-/* Swap to light mode if preffered */
+/* Swap to light mode if preferred */
 @media (prefers-color-scheme: light) {
   :root {
     --background-color: white;
     --text-color: black;
     --link-color: blue;
     --visited-link-color: #551A8B;
+
+    --table-border-color: #e2e5e8;
+    --table-stripe-color: #f6f8fa;
   }
 }
 

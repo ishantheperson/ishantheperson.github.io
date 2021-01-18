@@ -17,3 +17,20 @@ h4 {
   font-weight: normal;
   font-style: italic;
 }
+
+main.post table {
+  border-collapse: collapse;
+}
+
+main.post th {
+  text-align: center;
+}
+
+main.post td, main.post th {
+  border: 2px solid var(--table-border-color);
+  padding: 0.5em;
+}
+
+main.post tr:nth-child(2n) {
+  background-color: var(--table-stripe-color);
+}
