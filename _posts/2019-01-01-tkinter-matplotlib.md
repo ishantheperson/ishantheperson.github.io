@@ -15,7 +15,7 @@ Below is the result from our project:
 
 ![Data visualization](/assets/k-means.png)
 
-As you can see we have displayed four groups of data points, each in a different color.
+As you can see we have displayed three groups of data points, each in a different color.
 
 First we will look at setting up the `matplotlib` environment in `Tkinter`. Here is a minimal
 set of necessary `import` statements.
